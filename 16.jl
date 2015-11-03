@@ -13,3 +13,4 @@ for i in 1:n
   i == n && print(o, join(data[sep*i:end],""))
   close(o)
 end
+close(f)
