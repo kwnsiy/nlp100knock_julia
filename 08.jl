@@ -1,0 +1,22 @@
+## 08.jl
+# 暗号文
+
+function cipher(sentence)
+  s = []
+  for c in sentence
+    islower(c) && push!(s, Char(219 - Int(c)) )
+    !islower(c) && push!(s, c)
+  end
+  return join(s,"")
+end
+
+sentence = "Now I need a drink, alcoholic of course,
+ after the heavy lectures involving quantum mechanics."
+
+enc = cipher(sentence)
+println(enc)
+dec = cipher(enc)
+println(dec)
+println(dec == enc)
+
+

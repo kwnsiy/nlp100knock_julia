@@ -1,0 +1,23 @@
+## 06.jl 
+# 集合
+function ngram(input, n)
+  words = []
+  for i in 1:(length(input)-n+1)
+    push!(words, input[i:i+n-1])
+  end
+  return words
+end
+
+x = ngram("paraparaparadise", 2)
+y = ngram("paragraph", 2)
+
+println("--- 和集合 ---")
+println(union(x, y))
+println("--- 積集合 ---")
+println(intersect(x, y))　
+println("--- 差集合 ---")
+println(setdiff(x, y))
+
+println("\"se\" in ", x, " => ", in("se", x))
+println("\"se\" in ", y, " => ", in("se", y))
+
